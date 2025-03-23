@@ -158,4 +158,6 @@ def chat():
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    # This is used when running locally only. When deployed to Vercel,
+    # Vercel runs the app as a serverless function
+    app.run(host='0.0.0.0', port=8080, debug=True) 
